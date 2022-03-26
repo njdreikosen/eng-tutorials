@@ -1,0 +1,9 @@
+.diagram-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.diagram {
+  display: block;
+  margin: 10px auto;
+}

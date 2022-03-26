@@ -1,0 +1,20 @@
+.content {
+  width: auto;
+  margin: 50px 200px 50px 200px;
+  color: #3c3c3c;
+  overflow-y: hidden;
+}
+
+.content h1 {
+  text-align: center;
+  /*font-size: 50px;*/
+  font-size: calc(24px + 32 * ((100vw - 320px) / 1600));
+}
+
+.content-text {
+  /*font-size: 24px;*/
+  font-size: calc(12px + 18 * ((100vw - 320px) / 1600));
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 6px;
+  overflow-y: hidden;
+}
