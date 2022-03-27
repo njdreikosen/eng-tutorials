@@ -3,7 +3,6 @@
   height: auto;
   margin: 100px 200px;
   color: #3c3c3c;
-  background-color: green;
 }
 
 .home h1 {
@@ -13,12 +12,4 @@
 
 .home p {
   font-size: 20px;
-}
-
-.equation {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  font-size: 30px;
-  background-color: red;
 }

@@ -108,7 +108,7 @@ class App extends React.Component {
         >
           <div className='header'>
             <h1>{this.state.pageContent}</h1>
-            <a className='header-link' href="https://www.njdreikosen.github.io/">Back To<br/>njdreikosen.github.io</a>
+            <a className='header-link' href="https://njdreikosen.github.io/">Back To<br/>njdreikosen.github.io</a>
           </div>
           <div className='scroll-progress-container'>
             <div className='scroll-progress' style={{ height: this.state.scroll }}/>
