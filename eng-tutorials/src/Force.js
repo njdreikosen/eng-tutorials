@@ -14,9 +14,6 @@ class Force extends React.Component {
     }
   }
   componentDidMount() {
-    console.log('new');
-    console.log(this.contentDiv.clientHeight);
-    console.log(this.contentDiv.scrollHeight);
     this.props.setHeight(this.contentDiv.clientHeight);
     this.setState({
       height: this.contentDiv.clientHeight

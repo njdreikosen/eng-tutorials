@@ -35,22 +35,18 @@ class App extends React.Component {
   handleScroll = (e) => {
     const scrollTop = this.scrollRef.current.scrollTop;
     let scrollProgress = (scrollTop / (this.state.contentHeight - window.innerHeight + 150)) * 100;
-    console.log(`handleScroll:  scrollTop=${scrollTop}, total=${this.state.contentHeight}`)
-    console.log(`windowHeight: ${window.innerHeight}`)
     this.setState({
       scroll: `${scrollProgress}%`
     });
   }
 
   handleSetHeight = (pageHeight) => {
-    console.log(pageHeight);
     this.setState({
       contentHeight: pageHeight
     });
   }
 
   selectDropdown(dd, e) {
-    console.log(dd);
     if (this.state.dropdown === dd) {
       this.setState({
         dropdown: null
@@ -63,7 +59,6 @@ class App extends React.Component {
   }
 
   setPageContent(pc, e) {
-    console.log(pc);
     sessionStorage.setItem('pageContent', pc);
     this.setState({
       pageContent: pc
@@ -71,7 +66,6 @@ class App extends React.Component {
   }
 
   toggleNavbar() {
-    console.log("TOGGLE");
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -80,7 +74,6 @@ class App extends React.Component {
   render() {
     let hamburgerClass = this.state.isOpen ? 'hamburger hamburger-slider is-active' : 'hamburger hamburger-slider';
     let navbarClass = this.state.isOpen ? 'navbar is-open' : 'navbar';
-    console.log(this.state.scroll);
     return (
       <BrowserRouter basename={'/eng-tutorials'}>
         <button className={hamburgerClass} type='button' onClick={this.toggleNavbar}>
@@ -115,6 +108,7 @@ class App extends React.Component {
         >
           <div className='header'>
             <h1>{this.state.pageContent}</h1>
+            <a className='header-link' href="https://www.njdreikosen.github.io/">Back To<br/>njdreikosen.github.io</a>
           </div>
           <div className='scroll-progress-container'>
             <div className='scroll-progress' style={{ height: this.state.scroll }}/>
