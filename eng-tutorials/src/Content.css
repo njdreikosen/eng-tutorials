@@ -18,3 +18,25 @@
   margin: 6px;
   overflow-y: hidden;
 }
+
+.content-link {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0px;
+  overflow-y: hidden;
+  text-decoration: none;
+}
+
+.diagram-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.diagram {
+  display: block;
+  margin: 10px auto;
+}
+
+.matrix {
+  transform: scale(1.5);
+  margin: 30px auto
+}

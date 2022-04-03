@@ -101,6 +101,12 @@ class App extends React.Component {
               to="/comp-of-force">
             Components of Force
           </NavLink>
+          <NavLink
+              className={this.state.dropdown==='statics' ? 'dropdown is-open' : 'dropdown'}
+              onClick={(e) => this.setPageContent('Moments', e)}
+              to="/moments">
+            Moments
+          </NavLink>
         </div>
         <div className='display-panel'
           ref={this.scrollRef}
@@ -115,8 +121,9 @@ class App extends React.Component {
           </div>
           <Routes basename={'/eng-tutorials'}>
             <Route path="/" element={<Home />}/>
-            <Route path='/statics-overview' element={<StaticsOverview />}/>
+            <Route path='/statics-overview' element={<StaticsOverview setHeight={this.handleSetHeight}/>}/>
             <Route path="/comp-of-force" element={<Force setHeight={this.handleSetHeight}/>}/>
+            <Route path="/moments" element={<Moment setHeight={this.handleSetHeight}/>}/>
           </Routes>
         </div>
       </BrowserRouter>

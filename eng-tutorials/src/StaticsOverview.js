@@ -3,10 +3,30 @@ import React from 'react';
 import { BlockFormula, InlineFormula } from './Formula'
 
 class StaticsOverview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      height: 0
+    }
+  }
+  componentDidMount() {
+    this.props.setHeight(this.contentDiv.clientHeight);
+    this.setState({
+      height: this.contentDiv.clientHeight
+    });
+  }
+  componentDidUpdate() {
+    if (this.contentDiv.clientHeight != this.state.height) {
+      this.props.setHeight(this.contentDiv.clientHeight);
+      this.setState({
+        height: this.contentDiv.clientHeight
+      });
+    }
+  }
   render() {
     return (
-      <div className='content'>
-        <p>
+      <div className='content' ref={ (contentDiv) => { this.contentDiv = contentDiv } }>
+        <div className='content-text'>
           &emsp;&emsp;Static Mechanics, or Statics, is a branch of mechanics that deals with the analysis of 
           rigid bodies that have no acceleration, and are therefore in static equilibrium. Applying this acceleration 
           of <InlineFormula formula='\textbf{a}=0'/> to Newton's Second Law of Motion, we can see:
@@ -24,7 +44,7 @@ class StaticsOverview extends React.Component {
           <br /><br />
           &emsp;&emsp;We can combine those two concepts to solve for loads and torques applied to the system, as well as 
           other useful information.
-        </p>
+        </div>
       </div>
     )
   }
